@@ -1,0 +1,44 @@
+# query LaunchList {
+#   launches {
+#     cursor
+#     hasMore
+#     launches {
+#       id
+#       site
+#     }
+#   }
+# }
+
+# mutation login {
+#   login(email : "eyadheikal@gmail.com")
+# }
+# mutation m ($name: String){
+#   insert_users(objects: {name: $name}) {
+#     returning {
+#       name
+#       timestamp
+#     }
+#   }
+#   update_users(where: {name: {_eq: $name}}, _set: {twitter: ""}) {
+#     affected_rows
+#   }
+#   delete_users(where: {name: {_eq: $name}}) {
+#     returning {
+#       name
+#       timestamp
+#     }
+#   }
+# }
+
+
+query myquery {
+    launchesPast {
+      mission_name
+      launch_site {
+        site_name_long
+      }
+      links {
+        video_link
+      }
+    }
+}
