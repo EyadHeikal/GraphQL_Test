@@ -31,8 +31,14 @@
 # }
 
 
-query ships {
-    ships (limit : 5){
-    name
-  }
+query myquery {
+    launchesPast {
+      mission_name
+      launch_site {
+        site_name_long
+      }
+      links {
+        video_link
+      }
+    }
 }
